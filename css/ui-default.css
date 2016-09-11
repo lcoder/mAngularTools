@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors supmain (mtingfeng@gmail.com)
+ * @date    2016-09-11 10:20:12
+ * @version $Id$
+ */
+.mask { display: none; position: fixed; top:0;right:0;bottom:0;left:0; z-index:1; background-color: rgba(0,0,0,0.7); }
+.mask.show_block { display: block; opacity: 0;  -webkit-transition: opacity .2s; transition: opacity .2s; }
+.mask.show_opacity { display: block; opacity: 1; }
+#dg-loading .bd, #dg-tip { text-align: center }
+#dg-confirm, #dg-register, #dg-loading { position: fixed; top: 0; left: 0; height: 100%; -webkit-box-orient: vertical }
+#dg-tip { display: none; position: fixed; z-index: 9995; top: 40%; left: 10%; width: 80%; padding: 15px 0; color: #fff; background: rgba(0, 0, 0, .8); box-shadow: 0 0 5px rgba(0, 0, 0, .5); line-height: 22px }
+#dg-tip.pop_in { display: block; -webkit-animation: pop_in .5s }
+#dg-tip.pop_out { display: block; -webkit-animation: pop_out .3s; opacity: 0 }
+#dg-confirm, #dg-confirm .dg_body .btm { display: -webkit-box }
+#dg-confirm { z-index: 9994; width: 100%; background: rgba(0, 0, 0, .2); -webkit-box-pack: center }
+#dg-confirm .dg_body { width: 260px; padding: 1px; margin: -60px auto 0; overflow: hidden; background: #fff; text-align: center; border-radius: 2px; box-shadow: 0 0 8px rgba(0, 0, 0, .5) }
+#dg-confirm .dg_body .dg_box { padding: 25px 15px 30px }
+#dg-confirm .dg_body .dg_box .iconfont { font-size: 26px; vertical-align: middle; margin-right: 10px }
+#dg-confirm .dg_body .btm a { padding: 10px 0 8px; border-radius: 0; -webkit-box-flex: 1; display: block }
+#dg-confirm .dg_body .btm a.graybtn { border-right: 1px solid #fff }
+#dg-confirm.pop_in .dg_body { -webkit-animation: pop_in .5s }
+#dg-confirm.pop_out .dg_body { -webkit-animation: pop_out .3s; opacity: 0 }
+#dg-register, #dg-register .dg_body .btm { display: -webkit-box }
+#dg-register { z-index: 9995; width: 100%; background: rgba(0, 0, 0, .2); -webkit-box-pack: center }
+#dg-register .dg_body { width: 260px; padding: 1px; margin: -60px auto 0; overflow: hidden; background: #fff; text-align: center; border-radius: 4px; box-shadow: 0 0 8px rgba(0, 0, 0, .5) }
+#dg-register .dg_body .dg_box { position: relative; padding: 60px 15px 10px }
+#dg-register .dg_body .dg_box p { line-height: 2em; font-size: .16rem; color: #666 }
+#dg-register .dg_body .dg_box .close { position: absolute; right: 6px; top: 6px }
+#dg-register .dg_body .btm a.yellow_btn { -webkit-box-flex: 1; display: block; width: 80%; margin: 0 auto; font-size: .16rem; line-height: .38rem; border-radius: 6px }
+#dg-register .dg_body .btm a.yellow_btn .icon { vertical-align: -5px }
+#dg-register .dg_body .btm { padding-bottom: 20px }
+#dg-register.pop_in .dg_body { -webkit-animation: pop_in .5s }
+#dg-register.pop_out .dg_body { -webkit-animation: pop_out .3s; opacity: 0 }
+@-webkit-keyframes pop_in {
+    0% { -webkit-transform: scale(.6); opacity: 0 }
+    50% { -webkit-transform: scale(1.05); opacity: 1 }
+    100% { -webkit-transform: scale(1); opacity: 1 }
+}
+@-webkit-keyframes pop_out {
+    0% { -webkit-transform: scale(1); opacity: 1 }
+    50% { -webkit-transform: scale(1.05); opacity: 1 }
+    100% { -webkit-transform: scale(.6); opacity: 0 }
+}
+#dg-loading { z-index: 9990; width: 100%; background: rgba(0, 0, 0, .2); display: none; -webkit-box-pack: center }
+#dg-loading .bd { width: 100px; height: 95px; margin: -60px auto 0; overflow: hidden; background: rgba(0, 0, 0, .8); color: #f70; border-radius: 10px }
+#dg-loading .bd p { width: 50px; height: 50px; line-height: 50px; margin: 10px auto 0; -webkit-animation: loading 1.3s linear infinite }
+#dg-loading .bd i { font-size: 50px }
+#dg-loading .bd h4 { padding-top: 5px }
+@-webkit-keyframes loading {
+    100% { -webkit-transform: rotate(-360deg) }
+}
+#dg-bubble { -webkit-animation: pop_x_in .5s; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9990; -webkit-box-align: center; -webkit-align-items: center; align-items: center }
+#dg-bubble.pop_x_out { -webkit-animation: pop_x_out .5s }
+#dg-bubble .dg-bubble-inner { width: 100%; text-align: center; box-sizing: border-box }
+#dg-bubble .dg-bubble-inner span { display: inline-block; line-height: .4rem; padding: 0 .15rem; font-size: .16rem; color: #fff; background-color: rgba(0, 0, 0, .85); border-radius: .02rem; -webkit-border-radius: .02rem }
+@-webkit-keyframes pop_x_in {
+    0% { -webkit-transform: scale(.5, 1); opacity: 0 }
+    50% { -webkit-transform: scale(1.02, 1); opacity: 1 }
+    100% { -webkit-transform: scale(1, 1); opacity: 1 }
+}
+@-webkit-keyframes pop_x_out {
+    0% { -webkit-transform: scale(1, 1); opacity: 1 }
+    50% { -webkit-transform: scale(1.08, 1); opacity: 1 }
+    100% { -webkit-transform: scale(.6, 1); opacity: 0 }
+}
+#dg-friends-share{position:fixed;top:-10px;right:0;bottom:0;left:0;z-index:9990;background:rgba(0,0,0,.8);opacity:0;transition:all 0.2s;-webkit-transition:all 0.2s;visibility:hidden;}
+#dg-friends-share .bg_share{float:right;margin:.3rem .3rem 0 0;width:1.75rem;height:1.67rem;background:url("/bro/wechat/bro_static/images/bg_share.png") no-repeat center top;background-size:cover}
+#dg-friends-share.show {opacity:1;visibility:visible;top:0;}
